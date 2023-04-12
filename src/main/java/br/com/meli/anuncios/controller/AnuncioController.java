@@ -27,4 +27,14 @@ public class AnuncioController {
         return new ResponseEntity<>(anuncioService.findById(id), HttpStatus.OK);
     }
 
+    @GetMapping("/findByTitulo/{titulo}")
+    public ResponseEntity<?> findByTitulo(@PathVariable String titulo) {
+        return new ResponseEntity<>(anuncioService.findByTitulo(titulo), HttpStatus.OK);
+    }
+
+    @GetMapping("/findAll")
+    public ResponseEntity<?> findAll() {
+        return new ResponseEntity<>(anuncioService.findAll(), HttpStatus.OK);
+    }
+
 }
